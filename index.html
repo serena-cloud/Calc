@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shape Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background: #f8f8f8;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            display: inline-block;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        button {
+            display: block;
+            width: 300px;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background: #32558a;
+            color: white;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #32558a;
+        }
+    </style>
+    <script>
+        function rectangle() {
+            let length = parseFloat(prompt("Enter the length of the rectangle:"));
+            let width = parseFloat(prompt("Enter the width of the rectangle:"));
+
+            if (isNaN(length) || isNaN(width) || length <= 0 || width <= 0) {
+                alert("Please enter valid positive numbers!");
+                return;
+            }
+
+            let area = length * width;
+            let perimeter = 2 * (length + width);
+
+            alert(`Rectangle:\nArea = ${area}\nPerimeter = ${perimeter}`);
+        }
+
+        function square() {
+            let side = parseFloat(prompt("Enter the side of the square:"));
+
+            if (isNaN(side) || side <= 0) {
+                alert("Please enter a valid positive number!");
+                return;
+            }
+
+            let area = side * side;
+            let perimeter = 4 * side;
+
+            alert(`Square:\nArea = ${area}\nPerimeter = ${perimeter}`);
+        }
+
+        function circle() {
+            let radius = parseFloat(prompt("Enter the radius of the circle:"));
+
+            if (isNaN(radius) || radius <= 0) {
+                alert("Please enter a valid positive number!");
+                return;
+            }
+
+            let area = Math.PI * radius * radius;
+            let perimeter = 2 * Math.PI * radius;
+
+            alert(`Circle:\nArea = ${area.toFixed(2)}\nCircumference = ${perimeter.toFixed(2)}`);
+        }
+
+        function cylinder() {
+            let radius = parseFloat(prompt("Enter the radius of the cylinder:"));
+            let height = parseFloat(prompt("Enter the height of the cylinder:"));
+
+            if (isNaN(radius) || isNaN(height) || radius <= 0 || height <= 0) {
+                alert("Please enter valid positive numbers!");
+                return;
+            }
+
+            let surfaceArea = 2 * Math.PI * radius * (radius + height);
+
+            alert(`Cylinder:\nSurface Area = ${surfaceArea.toFixed(2)}`);
+        }
+    </script>
+</head>
+<body>
+    <h1>Shape Calculator</h1>
+    <div class="container">
+        <button onclick="rectangle()">Rectangle: Area & Perimeter</button>
+        <button onclick="square()">Square: Area & Perimeter</button>
+        <button onclick="circle()">Circle: Area & Circumference</button>
+        <button onclick="cylinder()">Cylinder: Surface Area</button>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Calculator</title>
+    <script>
+        function calculate() {
+            let num1 = parseFloat(prompt("Enter the first number:"));
+            let num2 = parseFloat(prompt("Enter the second number:"));
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers!");
+                return;
+            }
+
+            let addition = num1 + num2;
+            let subtraction = num1 - num2;
+            let multiplication = num1 * num2;
+            let division = (num2 !== 0) ? (num1 / num2) : "Undefined (cannot divide by zero)";
+
+            alert("Results:\n" +
+                  "Addition: " + addition + "\n" +
+                  "Subtraction: " + subtraction + "\n" +
+                  "Multiplication: " + multiplication + "\n" +
+                  "Division: " + division);
+        }
+    </script>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <button onclick="calculate()">Calculate</button>
+</body>
+</html>
